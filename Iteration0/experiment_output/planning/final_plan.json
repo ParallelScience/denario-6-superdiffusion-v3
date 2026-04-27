@@ -1,0 +1,118 @@
+{
+    "sub_tasks": [
+        {
+            "bullet_points": [
+                "Load both datasets from their exact provided paths (/home/node/work/projects/superdiffusion_v3/vortex_filament_tracers.npy and /home/node/work/projects/superdiffusion_v3/levy_walk_3d_trajectories.npy)",
+                "Verify data integrity: print total number of rows, unique trajectory IDs, unique N values, unique β values, and dtype of each field for both datasets",
+                "Reshape the flat vortex filament structured array into per-tracer trajectory matrices (grouped by trajectory_id and n_filaments) before computing velocities, to avoid boundary artifacts",
+                "Compute instantaneous velocity vectors (vx, vy, vz) using central differences on noise-free (x_true, y_true, z_true) coordinates; truncate first and last time steps per tracer",
+                "Compute velocity variance σ_v²(N) and mean speed for each filament configuration N ∈ {5, 10, 20, 40}",
+                "Compute speed distributions |v| for each N configuration",
+                "For the Lévy walk dataset, reshape per-trajectory and compute velocities similarly for each β class",
+                "Save all computed velocity arrays, variance statistics, and trajectory metadata to disk as npz files",
+                "Print detailed summary statistics: mean speed, velocity variance, number of tracers per N, time range, dt for both datasets"
+            ],
+            "sub_task": "Data loading, integrity verification, preprocessing, and velocity field characterization",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load preprocessed trajectory data from Step 1",
+                "For each N configuration, compute the TAMSD for each individual tracer using the sliding-window formula TAMSD(Δt) = (1/(T-Δt)) * Σ [r(t+Δt) - r(t)]² on noise-free 3D coordinates; clearly distinguish this from the EAMSD (displacement from origin)",
+                "Ensemble-average TAMSD over tracers for each N to obtain ⟨TAMSD(Δt)⟩",
+                "Compute the local log-log slope of ⟨TAMSD(Δt)⟩ vs Δt; programmatically identify the stable scaling window where the local slope is approximately constant within ±0.1 tolerance; print the identified window boundaries for each N",
+                "Fit power-law TAMSD ~ Δt^α within the identified stable window for each N; report α(N) with uncertainty",
+                "Repeat the same TAMSD computation and power-law fitting for each β class of the Lévy walk ground truth",
+                "Save all TAMSD arrays (per-tracer and ensemble-averaged), local slopes, fitted α values, and scaling windows to disk",
+                "Print α(N) for all vortex configurations and α for all Lévy walk β classes"
+            ],
+            "sub_task": "3D MSD scaling and anomalous exponent estimation",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load velocity arrays from Step 1",
+                "Compute the normalized 3D VACF per tracer: normalize each tracer's velocity dot-product by that tracer's own velocity variance ⟨|v(t)|²⟩, then ensemble-average the normalized VACFs across tracers for each N",
+                "Identify the zero-crossing time τ_c for each N from the ensemble-averaged VACF",
+                "Compute the VACF for each β class of the Lévy walk ground truth using the same per-trajectory normalization",
+                "For residence time analysis: define speed threshold at 25th percentile of speed for each N; identify contiguous time intervals where speed is below threshold; record durations of these intervals",
+                "Fit power-law P(τ) ~ τ^{-(1+β_trap)} using MLE (Pareto MLE estimator) applied directly to raw residence time durations, not binned histograms",
+                "Save VACF arrays, zero-crossing times, residence time arrays, and fitted β_trap values to disk",
+                "Print zero-crossing times and β_trap MLE estimates for each N"
+            ],
+            "sub_task": "VACF analysis and residence time distributions",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load velocity arrays from Step 1",
+                "For each N configuration, construct the empirical marginal PDF of velocity component vx and the speed distribution P(|v|)",
+                "Compute the Hill estimator as a function of k (number of upper-order statistics) to produce a Hill plot; identify the stable plateau region to select optimal k; print selected k and resulting α_stable estimate for each N",
+                "Fit a power-law to the tail of P(|v|) using log-log regression on the CCDF; compare against the theoretical Holtsmark tail exponent of -5/2",
+                "Compute displacement PDFs: for each N, collect all Δx displacements at multiple lag times (Δt = 1, 5, 10 steps); fit Lévy-stable distributions using scipy.stats.levy_stable.fit with stability index constrained to [1.0, 2.0]; report fitted stability index, scale, and location parameters separately for each lag time and N",
+                "Save all PDF arrays, Hill estimates, tail exponents, KS statistics, and displacement PDF data to disk",
+                "Print Hill estimates of α_stable and tail exponent fits for each N"
+            ],
+            "sub_task": "Velocity PDF tail analysis and Holtsmark distribution testing",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load per-tracer TAMSD arrays from Step 2",
+                "For each N configuration, compute the EB parameter EB = (⟨TAMSD²⟩ - ⟨TAMSD⟩²) / ⟨TAMSD⟩² at fixed lag time Δt = T/4",
+                "Compute EB as a function of lag time Δt for each N",
+                "Repeat EB calculation for each β class of the Lévy walk ground truth",
+                "Perform bootstrapping (500 resamples) resampling at the tracer level (resample with replacement from the 5 tracers per N) to generate 95% confidence intervals for both α(N) and EB(N); print bootstrap distribution width and note that 5 tracers per N produces wide intervals",
+                "Save EB values, EB vs Δt arrays, and bootstrap confidence intervals to disk",
+                "Print EB(N) for all vortex configurations and EB for all Lévy walk β classes with bootstrap confidence intervals"
+            ],
+            "sub_task": "Ergodicity breaking parameter calculation and bootstrap confidence intervals",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load all saved results from Steps 1–5",
+                "Plot 1: Multi-panel MSD scaling — log-log ⟨TAMSD⟩ vs Δt for all N (vortex) and all β classes (Lévy walk) with fitted power-law lines and α annotations; include local slope sub-panels",
+                "Plot 2: VACF — normalized VACF vs Δt for all N (vortex) and all β classes (Lévy walk) in separate panels; mark zero-crossing times with vertical dashed lines",
+                "Plot 3: Velocity PDF and tail analysis — log-log P(|v|) for each N with theoretical Holtsmark slope (-5/2) reference line; include marginal vx PDF with Lévy-stable fits",
+                "Plot 4: Displacement PDF evolution — marginal Δx PDF at multiple lag times for N=40 vortex system; overlay Gaussian and Lévy-stable fits to show non-Gaussianity",
+                "Plot 5: Residence time distributions — log-log P(τ) for each N with fitted power-law lines and β_trap annotations",
+                "Plot 6: Ergodicity breaking — EB parameter vs N for vortex system and vs β for Lévy walk; include EB vs Δt curves",
+                "Plot 7: Regime map — (EB, α) plane with vortex filament points (colored by N), Lévy walk points (colored by β); annotate theoretical Holtsmark prediction (α=1.5, EB=0) and normal diffusion (α=1.0, EB=0); if 2D superdiffusion_v2 results are available in the workspace load and overlay them, otherwise include a labeled placeholder region for the 2D Cauchy prediction",
+                "Save all plots as high-resolution PNG files"
+            ],
+            "sub_task": "Generate all analysis plots",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load all saved results from Steps 1–5",
+                "Perform bootstrapping (500 resamples at tracer level) for each N to generate 95% confidence intervals for α(N) and EB(N); print bootstrap distribution widths",
+                "Conduct KS tests comparing empirical speed distributions against theoretical Holtsmark (scipy.stats.levy_stable with α_stable=1.5, β_skew=0); first estimate scale and location parameters from the empirical data and use those fitted parameters in the KS test; print fitted scale and location parameters alongside KS statistics and p-values for each N",
+                "Conduct KS tests comparing empirical displacement PDFs at multiple lag times against Gaussian null hypothesis for each N; print KS statistics and p-values",
+                "Print all results in a detailed summary table",
+                "Save all validation results to disk"
+            ],
+            "sub_task": "Statistical validation via bootstrapping and KS tests",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Synthesize all quantitative results from Steps 1–7 into a comprehensive Results section",
+                "Report velocity variance σ_v²(N) and its scaling with N; discuss implications for disorder intensity",
+                "Report α(N) for all vortex configurations with bootstrap confidence intervals; compare against the theoretical Holtsmark prediction α=1.5 and the 2D Cauchy prediction α→1; discuss convergence with increasing N",
+                "Report VACF zero-crossing times τ_c(N) and compare against Lévy walk VACF profiles; discuss the role of quenched spatial disorder vs stochastic renewal in generating velocity memory",
+                "Report Hill estimates of α_stable and tail exponent fits for the velocity PDF; assess convergence toward the Holtsmark distribution",
+                "Report displacement PDF non-Gaussianity and its evolution with lag time; discuss the Lévy-stable fitted parameters",
+                "Report residence time tail exponents β_trap(N) and their connection to the anomalous diffusion exponent",
+                "Report EB(N) values with bootstrap confidence intervals; compare against Lévy walk EB values; discuss ergodicity breaking as a function of filament density",
+                "Explicitly quantify and discuss the finite-sample effect from only 5 tracers per N configuration as a dataset limitation",
+                "Report regime map positions of all systems in the (EB, α) plane; explicitly contrast 3D vortex filament results with 2D point-vortex results",
+                "Reference all generated plots by their descriptive names",
+                "Provide a coherent physical interpretation connecting all results to the Holtsmark distribution theory and the 3D Biot-Savart kernel"
+            ],
+            "sub_task": "Write the full Results section of the paper",
+            "sub_task_agent": "researcher"
+        }
+    ]
+}
