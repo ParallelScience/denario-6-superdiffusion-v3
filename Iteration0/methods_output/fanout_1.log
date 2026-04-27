@@ -1,0 +1,183 @@
+
+###### PROMPT BEGINS ########
+Human: You are provided with:
+- a description of the data
+- an idea
+- research plan to carry out the idea.
+
+Your task is to provide suggestions on how to improve the plan.
+Take into account and potential feedback (if any).
+If the plan is already good enough, do not give suggestions to improve it. If this is not first iteration, you will also be provided with the previous research plan along with some feedback on it. If this is the case, take into account the feedback provided when designing the new research plan. It is good to have a detailed plan, but not to have an overly complicated plan. If you dont have suggestions, just say that you dont have further suggestions. The idea should remain the same. No need to add code to the research plan, as another agent will write code given the research plan.
+
+Data description:
+## Superdiffusion in 3D Chaotic Vortex Filament Systems
+
+This project extends the 2D point-vortex superdiffusion study (superdiffusion_v2) to three dimensions. The physical model consists of N straight vortex filaments in 3D space, whose velocity fields follow the Biot-Savart law (1/r² falloff, Holtsmark distribution). A passive tracer is advected through this field. The goal is to characterise anomalous transport, derive the effective stochastic theory, and compare against 3D isotropic Lévy walk ground truth.
+
+*Key physics change from 2D:* The 3D Biot-Savart kernel (1/r²) differs from the 2D point-vortex kernel (1/r). For a uniform random 3D vortex gas, the theoretical velocity PDF tail is the Holtsmark distribution P(v) ~ v^{-5/2} (stability index α_stable = 3/2), predicting anomalous exponent α_diff = 3/2 = 1.5 — different from the 2D Cauchy prediction.
+
+---
+
+### File 1: 3D Vortex Filament Tracer Simulations
+
+*Path:* `/home/node/work/projects/superdiffusion_v3/vortex_filament_tracers.npy`
+
+NumPy structured array, 10,000 rows (20 tracers × 500 time steps).
+
+| Field          | dtype    | Description                                                                 |
+|----------------|----------|-----------------------------------------------------------------------------|
+| trajectory_id  | int32    | Tracer ID 1–20 (5 per N configuration)                                      |
+| n_filaments    | int32    | Number of vortex filaments N ∈ {5, 10, 20, 40}                              |
+| gamma_std      | float64  | Circulation std dev γ_std=1.0; Γ_i ~ N(0, γ_std²)                          |
+| time           | float64  | t = step × dt, dt=0.05 s, range [0, 24.75] s                               |
+| x_noisy        | float64  | Tracer x with Gaussian noise σ=0.02 m                                       |
+| y_noisy        | float64  | Tracer y with Gaussian noise σ=0.02 m                                       |
+| z_noisy        | float64  | Tracer z with Gaussian noise σ=0.02 m                                       |
+| x_true         | float64  | Noise-free tracer x                                                          |
+| y_true         | float64  | Noise-free tracer y                                                          |
+| z_true         | float64  | Noise-free tracer z                                                          |
+| msd_true       | float64  | True 3D squared displacement from origin: (x²+y²+z²)                       |
+
+*Physics model:* N infinite straight vortex filaments with random positions (uniform in [-10,10]³) and random unit-vector orientations. Circulations Γ_i ~ N(0, 1). Velocity at tracer position r induced by filament i:
+  v_i = (Γ_i / 2π) * (d̂_i × r_⊥_i) / |r_⊥_i|²
+where r_⊥_i is the perpendicular vector from the nearest point on filament i to the tracer. Tracer advected by RK4. Filament positions and orientations are fixed (quenched disorder — no filament-filament dynamics for tractability).
+
+*Loading:*
+```python
+import numpy as np
+vf = np.load('/home/node/work/projects/superdiffusion_v3/vortex_filament_tracers.npy', allow_pickle=False)
+mask = vf['n_filaments'] == 40
+traj = vf[mask]  # 2500 rows, N=40 configuration
+```
+
+---
+
+### File 2: 3D Isotropic Lévy Walk Ground Truth
+
+*Path:* `/home/node/work/projects/superdiffusion_v3/levy_walk_3d_trajectories.npy`
+
+NumPy structured array, 24,000 rows (40 trajectories × 600 time steps).
+
+| Field          | dtype    | Description                                                                 |
+|----------------|----------|-----------------------------------------------------------------------------|
+| trajectory_id  | int32    | Trajectory ID 1–40 (10 per β class)                                         |
+| beta           | float64  | Pareto tail index β; flight-time PDF P(τ) ~ τ^{-(1+β)}                      |
+| alpha_theory   | float64  | Theoretical α = 3−β (for 1 < β < 2)                                        |
+| time           | float64  | t = step × dt, dt=0.1 s, range [0, 59.9] s                                 |
+| x_noisy/y_noisy/z_noisy | float64 | Noisy positions, σ=0.05 m per coordinate                       |
+| x_true/y_true/z_true    | float64 | Noise-free positions                                                |
+| msd_true       | float64  | True 3D squared displacement from origin                                    |
+
+*Model:* Isotropic 3D Lévy walk. Flight directions uniform on the unit sphere (φ uniform in [0,2π], cosθ uniform in [-1,1]). Flight durations Pareto(β), minimum = dt. Speed v₀=1.0 m/s.
+
+*Classes (10 trajectories each):*
+| β    | α_theory | Regime                  |
+|------|----------|-------------------------|
+| 1.2  | 1.8      | Strong superdiffusion   |
+| 1.5  | 1.5      | Moderate superdiffusion |
+| 1.8  | 1.2      | Mild superdiffusion     |
+| 2.5  | 1.0      | Effectively normal      |
+
+*Loading:*
+```python
+lw = np.load('/home/node/work/projects/superdiffusion_v3/levy_walk_3d_trajectories.npy', allow_pickle=False)
+mask = lw['beta'] == 1.5
+traj = lw[mask]  # 6000 rows, β=1.5 (α=1.5)
+```
+
+---
+
+### Key differences from the 2D study (superdiffusion_v2)
+
+1. *3D Biot-Savart kernel:* velocity falloff ~ 1/r² (vs 1/r in 2D). Theoretical Holtsmark distribution for vortex velocity PDF has α_stable=3/2.
+2. *Quenched disorder:* filament positions are fixed (not evolving), so vortex-vortex chaos is absent. The tracer still undergoes anomalous transport due to the heterogeneous velocity field.
+3. *Isotropic 3D Lévy walks:* flight directions uniform on sphere, MSD = x²+y²+z².
+4. *All MSD analyses should use:* MSD(t) = ⟨x²+y²+z²⟩ (3D displacement).
+
+### Suggested analyses
+
+1. *3D MSD scaling:* TAMSD with 3D displacement. Fit α(N) across vortex configurations. Compare to Lévy walk ground truth.
+2. *3D VACF:* full 3D velocity vector v=(vx,vy,vz); C_v(Δt) = ⟨v(t)·v(t+Δt)⟩/⟨|v|²⟩.
+3. *Residence time distributions:* same methodology as 2D, using 3D speed threshold.
+4. *3D displacement PDFs:* marginal PDF of one coordinate Δx at multiple lag times. Test for Holtsmark vs Lévy-stable vs Gaussian.
+5. *Ergodicity breaking:* EB parameter from 3D TAMSD.
+6. *Comparison with 2D results:* how do α(N) and the VACF zero-crossing times differ between 2D and 3D? Does the Holtsmark prediction (α≈1.5) match the N=40 3D result better than the 2D Cauchy prediction (α→1)?
+7. *Regime map:* same (EB, α) plane as in v2, with v2 results overlaid for direct 2D vs 3D comparison.
+
+
+Idea:
+**Title**: Velocity PDF Scaling and Anomalous Transport in 3D Quenched Vortex Filament Fields
+
+**Description**: This study characterizes 3D tracer advection by analyzing the empirical velocity PDF and MSD scaling across filament densities $N \in \{5, 10, 20, 40\}$. Leveraging noise-free `x_true` trajectories, we directly compute the velocity distribution tails to test for convergence toward the theoretical Holtsmark distribution ($\alpha_{stable}=1.5$) predicted by the $1/r^2$ Biot-Savart kernel. We quantify the anomalous diffusion exponent $\alpha(N)$ via power-law fitting of the 3D MSD, using the $\beta=1.5$ Lévy walk ground truth as a baseline to define the expected theoretical transport regime. By comparing the VACF decay of the filament system against the isotropic Lévy walk, we isolate the impact of quenched spatial disorder on velocity memory versus purely stochastic jumps. This analysis provides a rigorous validation of the 3D-specific transport limit, explicitly contrasting the observed $\alpha(N)$ convergence with the Cauchy-dominated results of 2D point-vortex systems.
+
+Research plan:
+1. **Data Preprocessing and Trajectory Reconstruction**:
+   - Load the `vortex_filament_tracers.npy` and `levy_walk_3d_trajectories.npy` datasets.
+   - For the vortex filament data, group trajectories by `n_filaments` ($N \in \{5, 10, 20, 40\}$).
+   - Calculate the instantaneous velocity vectors $\mathbf{v}(t)$ for all tracers using the central difference method on the `x_true`, `y_true`, and `z_true` coordinates to avoid noise contamination.
+   - Standardize the velocity time series for each trajectory to facilitate comparison with the Lévy walk ground truth.
+
+2. **3D MSD Scaling and Anomalous Exponent Estimation**:
+   - Compute the Time-Averaged Mean Squared Displacement (TAMSD) for each tracer: $\overline{\delta^2(\Delta t)} = \frac{1}{T-\Delta t} \int_0^{T-\Delta t} [\mathbf{r}(t+\Delta t) - \mathbf{r}(t)]^2 dt$.
+   - Perform ensemble averaging over tracers for each $N$ to obtain $\langle \text{MSD}(\Delta t) \rangle$.
+   - Fit the power-law $\langle \text{MSD}(\Delta t) \rangle \sim \Delta t^{\alpha}$ using log-log linear regression to extract the anomalous diffusion exponent $\alpha(N)$.
+   - Compare these exponents against the theoretical prediction of $\alpha = 1.5$ and the $\beta=1.5$ Lévy walk baseline.
+
+3. **Velocity Autocorrelation Function (VACF) Analysis**:
+   - Compute the 3D VACF: $C_v(\Delta t) = \frac{\langle \mathbf{v}(t) \cdot \mathbf{v}(t+\Delta t) \rangle}{\langle |\mathbf{v}(t)|^2 \rangle}$.
+   - Identify the zero-crossing time $\tau_c$ where the velocity memory decays.
+   - Contrast the decay profile of the vortex filament system against the Lévy walk ground truth to determine if the quenched disorder induces longer-lived velocity correlations than the stochastic Lévy model.
+
+4. **Velocity PDF and Holtsmark Distribution Testing**:
+   - Construct the empirical PDF of the velocity components $P(v_x, v_y, v_z)$ from the tracer data.
+   - Perform a tail analysis on the marginal distributions $P(v_x)$ to estimate the stability index $\alpha_{stable}$ via Hill estimation or log-log tail fitting.
+   - Assess the convergence of the empirical tails toward the theoretical Holtsmark distribution ($P(v) \sim v^{-5/2}$) as $N$ increases.
+
+5. **Residence Time Distribution Analysis**:
+   - Define a speed threshold $v_{th}$ based on the median speed of the tracer ensemble.
+   - Calculate the distribution of residence times $\tau$ spent within regions of high velocity (exceeding $v_{th}$).
+   - Fit the resulting distribution to a power-law $P(\tau) \sim \tau^{-(1+\beta)}$ to characterize the "trapping" vs. "flight" dynamics inherent in the quenched 3D vortex field.
+
+6. **Ergodicity Breaking (EB) Parameter Calculation**:
+   - Quantify ergodicity breaking by calculating the EB parameter $EB = \frac{\langle \overline{\delta^2(\Delta t)}^2 \rangle - \langle \overline{\delta^2(\Delta t)} \rangle^2}{\langle \overline{\delta^2(\Delta t)} \rangle^2}$ for a fixed lag time $\Delta t$.
+   - Evaluate the dependence of $EB$ on $N$ to determine if the system approaches ergodicity as the number of filaments increases.
+
+7. **Comparative Regime Mapping**:
+   - Map the results onto an $(\alpha, EB)$ plane.
+   - Overlay the 3D vortex filament results with the 2D point-vortex data (from `superdiffusion_v2`) and the 3D Lévy walk ground truth.
+   - Use this map to visualize the transition from 2D Cauchy-dominated transport to 3D Holtsmark-dominated transport.
+
+8. **Statistical Validation**:
+   - Perform bootstrapping on the tracer trajectories to generate confidence intervals for $\alpha(N)$ and the VACF decay constants.
+   - Conduct a Kolmogorov-Smirnov test to compare the empirical velocity distributions against the theoretical Holtsmark distribution and the Lévy walk velocity distributions.
+
+Previous research plan:
+None
+
+Feedback on previous research plan:
+None
+
+
+Respond in this format:
+
+\\begin{SUGGESTIONS}
+<SUGGESTIONS>
+\\end{SUGGESTIONS}
+
+In <SUGGESTIONS> put the suggestions to improve the plan.
+
+###### PROMPT ENDS ########
+
+###### RESPONSE [model: gemini-3.1-flash-lite-preview] ########
+\begin{SUGGESTIONS}
+The research plan is well-structured and covers the necessary physical diagnostics to characterize the transition from 2D to 3D vortex dynamics. I have two suggestions to improve the robustness of the analysis:
+
+1. **Refine Velocity Calculation (Step 1):** While central differences are standard, the tracer data is sampled at discrete time steps. Given that the velocity field is induced by fixed filaments, the velocity is analytically defined by the Biot-Savart law. If the code allows, consider calculating the *theoretical* velocity at each `x_true` position using the Biot-Savart formula rather than relying solely on numerical differentiation of the trajectory. This will provide a cleaner "ground truth" velocity for the PDF analysis (Step 4) and avoid artifacts from the discrete time-stepping.
+
+2. **Address Finite-Size Effects in MSD (Step 2):** Since the vortex filaments are placed in a finite volume ([-10, 10]³), the tracer trajectories may be bounded or influenced by the domain edges. Before performing the power-law fit for $\alpha(N)$, verify if the MSD saturates at large $\Delta t$ due to the finite simulation box. If saturation occurs, restrict the fitting range to the linear regime of the log-log plot to ensure the extracted $\alpha$ reflects the local transport properties rather than the domain geometry.
+
+3. **Clarification on "Residence Time" (Step 5):** In the context of quenched vortex fields, "residence time" is often more physically meaningful when defined by spatial regions (e.g., time spent within a certain distance of a filament) rather than just speed thresholds. Consider calculating the distance to the nearest filament for each tracer at each time step to define "trapping" events, as this will provide a more direct link to the underlying quenched disorder than a speed-based threshold.
+
+Otherwise, the plan is comprehensive and ready for implementation.
+\end{SUGGESTIONS}
+
