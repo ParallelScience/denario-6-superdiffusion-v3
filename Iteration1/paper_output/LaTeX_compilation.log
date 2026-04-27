@@ -1,0 +1,1348 @@
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input_files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined.pdf (1 page).
+Transcript written on Results_refined.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v1.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v1.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input_files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v1.pdf (1 page).
+Transcript written on Results_refined_v1.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v2.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v2.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input-files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input-files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v2.pdf (1 page).
+Transcript written on Results_refined_v2.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v3.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v3.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input_files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v3.pdf (1 page).
+Transcript written on Results_refined_v3.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input_files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined.pdf (1 page).
+Transcript written on Results_refined.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v1.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v1.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input-files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input-files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v1.pdf (1 page).
+Transcript written on Results_refined_v1.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v2.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v2.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input_files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v2.pdf (1 page).
+Transcript written on Results_refined_v2.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v3.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v3.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input-files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input-files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v3.pdf (1 page).
+Transcript written on Results_refined_v3.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input_files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined.pdf (1 page).
+Transcript written on Results_refined.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v1.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v1.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input-files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input-files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v1.pdf (1 page).
+Transcript written on Results_refined_v1.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v2.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v2.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input-files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input-files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input-files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v2.pdf (1 page).
+Transcript written on Results_refined_v2.log.
+---- STDERR ----
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Results_refined_v3.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file Results_refined_v3.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 1 undefined on input line 15
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 1 undefined on input line 15.
+
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 1 undefined on input li
+ne 65.
+
+[1]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_1.png' not found on input
+ line 69.
+
+! Unable to load picture or PDF file '../input_files/plots/step_6_plot_1.png'.
+<to be read again> 
+                   }
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.69 ...h]{../input_files/plots/step_6_plot_1.png}
+                                                  
+Output written on Results_refined_v3.pdf (1 page).
+Transcript written on Results_refined_v3.log.
+---- STDERR ----
+
+==== ERROR on iteration Pass 1 ====
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./paper_v2_no_citations.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+No file paper_v2_no_citations.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd) [1] [2]
+Overfull \hbox (21.132pt too wide) in paragraph at lines 45--46
+[]\TU/lmr/m/n/10 For comparative purposes, we also generated trajectories from 
+a three-dimensional
+
+Overfull \hbox (5.66002pt too wide) in paragraph at lines 50--51
+[]\TU/lmr/m/n/10 The primary metric for anomalous diffusion is the time-average
+d mean squared
+[3]
+
+LaTeX Warning: Reference `tab:params_vortex' on page 4 undefined on input line 
+82.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 4 undefined on input line 82
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 4 undefined on input line 82.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 4 undefined on input line 
+82.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 4 undefined on input line 82
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 4 undefined on input line 82.
+
+[4]
+
+LaTeX Warning: Reference `fig:tamsd_individual' on page 5 undefined on input li
+ne 132.
+
+[5]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:tamsd_ensemble' on page 6 undefined on input line
+ 143.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 6 undefined on input line 
+143.
+
+
+LaTeX Warning: Reference `tab:params_levy' on page 6 undefined on input line 14
+3.
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 148--148
+[]\TU/lmr/m/n/10 Figure 2: Ensemble-averaged time-averaged mean squared displac
+ement
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:speed_pdf' on page 6 undefined on input line 154.
+
+
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_3.png' not found on input
+ line 158.
+
+./paper_v2_no_citations.tex:158: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_3.png'.
+<to be read again> 
+                   }
+l.158 ...]{../input_files/plots/step_6_plot_3.png}
+                                                  
+
+./paper_v2_no_citations.tex:158: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 ...]{../input_files/plots/step_6_plot_3.png}
+                                                  
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:vacf' on page 6 undefined on input line 165.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 6 undefined on input line 
+165.
+
+
+LaTeX Warning: Reference `tab:params_vortex' on page 6 undefined on input line 
+165.
+
+[6]
+
+LaTeX Warning: Text page 7 contains only floats.
+
+[7] [8]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_4.png' not found on input
+ line 169.
+
+./paper_v2_no_citations.tex:169: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_4.png'.
+<to be read again> 
+                   }
+l.169 ...]{../input_files/plots/step_6_plot_4.png}
+                                                  
+
+./paper_v2_no_citations.tex:169: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 ...]{../input_files/plots/step_6_plot_4.png}
+                                                  
+
+LaTeX Warning: Reference `fig:residence_time' on page 9 undefined on input line
+ 176.
+
+
+LaTeX Warning: Reference `fig:ow_scatter' on page 9 undefined on input line 178
+.
+
+
+LaTeX Warning: Reference `tab:params_ow' on page 9 undefined on input line 178.
+
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_7.png' not found on input
+ line 189.
+
+./paper_v2_no_citations.tex:189: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_7.png'.
+<to be read again> 
+                   }
+l.189 ...]{../input_files/plots/step_6_plot_7.png}
+                                                  
+
+./paper_v2_no_citations.tex:189: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ...]{../input_files/plots/step_6_plot_7.png}
+                                                  
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Reference `fig:disp_pdf' on page 9 undefined on input line 196.
+
+[9]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_6.png' not found on input
+ line 200.
+
+./paper_v2_no_citations.tex:200: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_6.png'.
+<to be read again> 
+                   }
+l.200 ...]{../input_files/plots/step_6_plot_6.png}
+                                                  
+
+./paper_v2_no_citations.tex:200: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.200 ...]{../input_files/plots/step_6_plot_6.png}
+                                                  
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10] [11]
+No file paper_v2_no_citations.bbl.
+[12] (./paper_v2_no_citations.aux)---- STDERR ----
+
+xdvipdfmx:fatal: Image inclusion failed. Could not find file: ../input_files/plots/step_6_plot_3.png
+
+No output PDF file written.
+
+==== ERROR on iteration Final Pass 1 ====
+---- STDOUT ----
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./paper_v2_no_citations.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def)
+(./paper_v2_no_citations.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd) [1] [2]
+Overfull \hbox (21.132pt too wide) in paragraph at lines 45--46
+[]\TU/lmr/m/n/10 For comparative purposes, we also generated trajectories from 
+a three-dimensional
+
+Overfull \hbox (5.66002pt too wide) in paragraph at lines 50--51
+[]\TU/lmr/m/n/10 The primary metric for anomalous diffusion is the time-average
+d mean squared
+[3] [4] [5]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 1803) in paragraph at lines 148--148
+[]\TU/lmr/m/n/10 Figure 2: Ensemble-averaged time-averaged mean squared displac
+ement
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_3.png' not found on input
+ line 158.
+
+./paper_v2_no_citations.tex:158: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_3.png'.
+<to be read again> 
+                   }
+l.158 ...]{../input_files/plots/step_6_plot_3.png}
+                                                  
+
+./paper_v2_no_citations.tex:158: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 ...]{../input_files/plots/step_6_plot_3.png}
+                                                  
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6]
+
+LaTeX Warning: Text page 7 contains only floats.
+
+[7]
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_4.png' not found on input
+ line 169.
+
+./paper_v2_no_citations.tex:169: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_4.png'.
+<to be read again> 
+                   }
+l.169 ...]{../input_files/plots/step_6_plot_4.png}
+                                                  
+
+./paper_v2_no_citations.tex:169: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 ...]{../input_files/plots/step_6_plot_4.png}
+                                                  
+[8]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_7.png' not found on input
+ line 189.
+
+./paper_v2_no_citations.tex:189: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_7.png'.
+<to be read again> 
+                   }
+l.189 ...]{../input_files/plots/step_6_plot_7.png}
+                                                  
+
+./paper_v2_no_citations.tex:189: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.189 ...]{../input_files/plots/step_6_plot_7.png}
+                                                  
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: File `../input_files/plots/step_6_plot_6.png' not found on input
+ line 200.
+
+./paper_v2_no_citations.tex:200: Unable to load picture or PDF file '../input_f
+iles/plots/step_6_plot_6.png'.
+<to be read again> 
+                   }
+l.200 ...]{../input_files/plots/step_6_plot_6.png}
+                                                  
+
+./paper_v2_no_citations.tex:200: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.200 ...]{../input_files/plots/step_6_plot_6.png}
+                                                  
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9]
+
+LaTeX Warning: Text page 10 contains only floats.
+
+
+Overfull \vbox (0.56502pt too high) has occurred while \output is active
+[10]
+No file paper_v2_no_citations.bbl.
+[11] (./paper_v2_no_citations.aux)---- STDERR ----
+
+xdvipdfmx:fatal: Image inclusion failed. Could not find file: ../input_files/plots/step_6_plot_3.png
+
+No output PDF file written.

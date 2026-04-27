@@ -1,0 +1,139 @@
+\documentclass[]{article}
+
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage{graphicx} 
+
+
+\begin{document}
+
+We present the results of our numerical investigation into tracer transport in quenched 3D vortex filament fields. We first provide a quantitative summary of the key transport parameters, followed by a detailed analysis of the mean squared displacement, velocity statistics, temporal correlations, and the connection between transport dynamics and the local flow topology.
+
+\subsubsection{Summary of transport parameters}
+
+Tables \ref{tab:params_vortex}, \ref{tab:params_levy}, and \ref{tab:params_ow} consolidate the primary quantitative findings from our simulations. Table \ref{tab:params_vortex} lists the anomalous diffusion exponents $\alpha(N)$, velocity correlation times $\tau_c$, and persistence lengths $L_p$ for each filament density $N$. For comparison, Table \ref{tab:params_levy} provides the measured diffusion exponents for canonical isotropic L\'evy walks. Table \ref{tab:params_ow} summarizes the correlation between tracer speed and local flow topology for the highest density case, $N=40$.
+
+\begin{table}[h!]
+\centering
+\caption{Summary of anomalous transport parameters for the 3D vortex filament system. Columns include the number of filaments ($N$), the fitted anomalous diffusion exponent ($\alpha(N)$) with its standard error (SE), the velocity autocorrelation zero-crossing time ($\tau_c$), the persistence length ($L_p$), and the mean inter-filament spacing ($\ell_{\text{inter}}$). Dashes indicate cases where the VACF did not cross zero within the observation time.}
+\label{tab:params_vortex}
+\begin{tabular}{cccccc}
+\hline
+$N$ & $\alpha(N)$ & $\alpha$ SE & $\tau_c$ (s) & $L_p$ (m) & $\ell_{\text{inter}}$ (m) \\
+\hline
+5  & 1.999 & 0.000 & ---     & ---     & 11.70 \\
+10 & 1.964 & 0.002 & 10.17 & 0.313 & 9.28  \\
+20 & 1.969 & 0.001 & ---     & ---     & 7.37  \\
+40 & 1.835 & 0.003 & 9.555 & 0.578 & 5.85  \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Summary of transport parameters for the 3D isotropic L\'evy walk ground truth. Columns show the flight time distribution exponent ($\beta$), the theoretical diffusion exponent ($\alpha_{\text{theory}}$), and the exponent measured from our finite-time simulations ($\alpha_{\text{measured}}$).}
+\label{tab:params_levy}
+\begin{tabular}{ccc}
+\hline
+$\beta$ & $\alpha_{\text{theory}}$ & $\alpha_{\text{measured}}$ \\
+\hline
+1.2 & 1.8 & 1.655 \\
+1.5 & 1.5 & 1.049 \\
+1.8 & 1.2 & 1.069 \\
+2.5 & 1.0 & 1.012 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Okubo-Weiss and spatial correlation analysis for the $N=40$ configuration.}
+\label{tab:params_ow}
+\begin{tabular}{lc}
+\hline
+Quantity & Value \\
+\hline
+OW--speed Pearson r & $-$0.508 \\
+Rolling speed variance--speed Pearson r & +0.425 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Signatures of quenched disorder and non-ergodicity}
+
+The quenched nature of the velocity field leads to signatures of non-ergodic behavior. As illustrated in Figure \ref{fig:tamsd_individual}, we observed a pronounced spread in the time-averaged mean squared displacement (TAMSD) curves calculated for individual tracers within the same filament configuration. This realization-to-realization variability is not statistical noise but a physical consequence of the fact that each tracer samples a different, fixed spatial region of the flow field. The spread is largest for the sparse $N=5$ case and narrows as $N$ increases and the velocity field becomes more spatially homogeneous. However, even at $N=40$, significant spread persists, indicating that the observation time is insufficient for a single trajectory to fully sample the statistical properties of the entire disordered environment. This weak ergodicity breaking is a hallmark of transport in quenched media with long-range correlations and heavy-tailed statistics.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{../input_files/plots/step_6_plot_1.png}
+    \caption{Realization-dependent spread in the time-averaged mean squared displacement (TAMSD) for individual tracers. Each panel shows the five individual tracer TAMSDs (light lines) and the ensemble average (dark line) for a given filament density $N$. The spread, which is a signature of the quenched disorder, is most pronounced for the sparse $N=5$ case and narrows as $N$ increases.}
+    \label{fig:tamsd_individual}
+\end{figure}
+
+\subsection{Anomalous diffusion and MSD scaling}
+
+The ensemble-averaged TAMSD curves, shown in Figure \ref{fig:tamsd_ensemble} for all four vortex filament configurations, exhibit clear power-law growth, $\langle \delta^2(\Delta t) \rangle_t \sim (\Delta t)^\alpha$, over intermediate lag times. The fitted anomalous diffusion exponents $\alpha(N)$, reported in Table \ref{tab:params_vortex}, reveal a strongly superdiffusive regime that systematically evolves with filament density. For the sparsest configuration ($N=5$), the transport is nearly ballistic, with $\alpha = 1.999 \pm 0.000$. As the density increases, the exponent decreases, reaching $\alpha = 1.835 \pm 0.003$ for $N=40$. This trend suggests a slow convergence towards the asymptotic regime predicted by Holtsmark theory ($\alpha = 1.5$). At low densities, a tracer is primarily influenced by the nearest filament, leading to prolonged, nearly straight-line motion. As $N$ increases, the superposition of fields from multiple filaments introduces the velocity randomization necessary for anomalous, rather than ballistic, diffusion. This behavior contrasts with the L\'evy walk simulations (Table \ref{tab:params_levy}), where the measured exponents are systematically lower than their theoretical values due to finite-time effects in a memoryless process.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{../input_files/plots/step_6_plot_2.png}
+    \caption{Ensemble-averaged time-averaged mean squared displacement (TAMSD) for the vortex filament systems (solid lines) and a reference L\'evy walk with theoretical exponent $\alpha=1.5$ (dashed line). The fitted power-law exponents $\alpha(N)$ are indicated. All filament systems exhibit strong superdiffusion, with the exponent decreasing towards the theoretical Holtsmark limit of 1.5 as filament density $N$ increases.}
+    \label{fig:tamsd_ensemble}
+\end{figure}
+
+\subsection{Velocity statistics and the Holtsmark distribution}
+
+The probability distribution functions (PDFs) of tracer speeds, shown in Figure \ref{fig:speed_pdf} after normalization by their standard deviation $v_c(N)$, show a partial data collapse, suggesting a universal statistical structure dictated by the Biot-Savart law. The tails of these distributions are of particular interest, as Holtsmark theory predicts a power-law decay $P(v) \sim v^{-5/2}$ for the velocity components. Our empirical speed PDFs exhibit heavy tails consistent with this power-law behavior. We observe a slight steepening of the tail as $N$ increases, which may be due to the superposition of multiple velocity fields softening the most extreme velocity events that arise from close encounters with a single filament. Despite this, the overall tail behavior provides strong evidence that the underlying velocity statistics are governed by a L\'evy-stable distribution.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{../input_files/plots/step_6_plot_3.png}
+    \caption{Normalized probability distribution functions (PDFs) of tracer speeds for different filament densities $N$. Speeds are normalized by the standard deviation $v_c(N)$ for each case. The distributions show a partial data collapse and exhibit heavy tails consistent with the Holtsmark prediction of a power-law decay $P(v) \sim v^{-5/2}$.}
+    \label{fig:speed_pdf}
+\end{figure}
+
+\subsection{Velocity correlations and persistence}
+
+To quantify the temporal memory inherent in the deterministic flow, we computed the velocity autocorrelation function (VACF), shown in Figure \ref{fig:vacf}. For the vortex filament system, the VACF exhibits a characteristic decay followed by a region of anti-correlation (a negative lobe), a signature of tracers being deflected by the curved flow fields around filaments. The first zero-crossing time, $\tau_c$, provides a measure of the velocity correlation time. As shown in Table \ref{tab:params_vortex}, $\tau_c$ is approximately 10 s for $N=10$ and $N=40$. For the sparser cases, the VACF did not cross zero within the simulation window, indicating extremely long correlation times. The persistence length $L_p$ (Table \ref{tab:params_vortex}) is substantially smaller than the mean inter-filament spacing $\ell_{\text{inter}}$, implying that velocity memory is lost due to the local curvature of the flow field, rather than encounters with distant filaments. This behavior is fundamentally different from a canonical L\'evy walk, which is a memoryless renewal process and thus lacks the anti-correlation signature.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{../input_files/plots/step_6_plot_4.png}
+    \caption{Normalized velocity autocorrelation function (VACF) for the vortex filament systems and a reference L\'evy walk. The vortex systems exhibit long-range correlations and a negative lobe (anti-correlation), with zero-crossing times $\tau_c$ around 10 s for $N=10$ and $N=40$. The L\'evy walk, a renewal process, shows a rapid decay to zero with no anti-correlation.}
+    \label{fig:vacf}
+\end{figure}
+
+\subsection{Trapping dynamics and flow topology}
+
+The anomalous transport observed arises from an interplay between rapid flights and prolonged trapping events. The temporal characteristics of these traps are captured by the residence time distribution, $P(\tau)$, for low-speed events, shown in Figure \ref{fig:residence_time}. For all filament densities, the distributions exhibit heavy, power-law-like tails. This is qualitatively consistent with the theoretical prediction $P(\tau) \sim \tau^{-5/2}$ derived from Holtsmark statistics, suggesting that trapping durations are drawn from a heavy-tailed distribution.
+
+To elucidate the physical mechanisms and spatial locations of these events, we connected the tracer dynamics to the local flow topology using an Okubo-Weiss (OW) analysis for the $N=40$ configuration. As shown in Figure \ref{fig:ow_scatter}, there is a strong negative correlation between tracer speed and the OW parameter (Pearson $r = -0.508$, Table \ref{tab:params_ow}). This indicates that low-speed trapping events occur preferentially in rotation-dominated regions of the flow ($OW < 0$), while high-speed flights are associated with strain-dominated regions ($OW > 0$). A complementary positive correlation ($r = +0.425$) between speed and its local variance further suggests that high-speed regions are also the most dynamically variable. Collectively, these results paint a clear picture: anomalous transport is driven by rapid flights through strain-dominated regions punctuated by prolonged, power-law distributed trapping events within rotational vortex-like structures.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{../input_files/plots/step_6_plot_5.png}
+    \caption{Residence time distributions, P($\tau$), for low-speed trapping events, defined as speeds below the 25th percentile of the speed distribution, for different numbers of filaments (N). The empirical distributions exhibit heavy-tailed power-law characteristics, qualitatively consistent with the theoretical Holtsmark prediction, $P(\tau) \sim \tau^{-2.5}$, which is shown as a dashed reference line.}
+    \label{fig:residence_time}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{../input_files/plots/step_6_plot_7.png}
+    \caption{Relationship between tracer speed and local flow topology for the $N=40$ configuration, characterized by the Okubo-Weiss (OW) parameter. The scatter plot shows a clear negative correlation, indicating that low-speed events (trapping) occur in rotation-dominated regions ($OW < 0$), while high-speed flights occur in strain-dominated regions ($OW > 0$).}
+    \label{fig:ow_scatter}
+\end{figure}
+
+\subsection{Displacement distributions and non-Gaussianity}
+
+The combination of flights and trapping events shapes the overall transport, which is characterized by the probability distribution of tracer displacements, $P(\Delta x)$. Figure \ref{fig:disp_pdf} shows these distributions for the $N=40$ case. At short lag times ($\Delta t = 1$ s), the distribution is highly non-Gaussian, with pronounced heavy tails that are well-described by a L\'evy-stable distribution with a stability index consistent with the Holtsmark prediction ($\alpha_{\text{stable}} \approx 1.5$). As the lag time increases towards and beyond the velocity correlation time ($\tau_c \approx 9.5$ s), the central part of the distribution progressively approaches a Gaussian form, as expected from the central limit theorem acting on increasingly decorrelated steps. However, the tails remain heavy, indicating that the transport process retains its L\'evy-like character over all observed timescales.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{../input_files/plots/step_6_plot_6.png}
+    \caption{Marginal displacement PDFs for the $N=40$ configuration at different lag times $\Delta t$. The distributions are non-Gaussian, with heavy tails that are well-described by a L\'evy-stable fit with index $\alpha_{\text{stable}} \approx 1.5$. As $\Delta t$ increases, the core of the distribution trends towards a Gaussian shape, while the tails remain heavy.}
+    \label{fig:disp_pdf}
+\end{figure}
+
+\end{document}
+                
