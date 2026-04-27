@@ -1,0 +1,7 @@
+The observed failures in the analysis—specifically the inability to reach the theoretical Holtsmark stability index ($\alpha_{stable} = 1.5$) and the high variance/instability in the residence time and tail estimates—are directly attributable to the following constraints in the dataset description:
+
+1. **Limited Sample Size**: The dataset contains only 5 tracers per $N$ configuration (20 total). This is insufficient to resolve the asymptotic tails of the velocity PDF or the residence time distribution, leading to the observed sensitivity of the Hill and MLE estimators to individual quenched disorder realizations.
+2. **Quenched Disorder (Fixed Filament Positions)**: The dataset description specifies that filament positions are fixed (quenched). This constraint prevents the system from reaching the ergodic, annealed state required for the Holtsmark distribution to emerge. The persistent velocity correlations and near-ballistic MSD scaling are direct consequences of this lack of filament-filament dynamics.
+3. **Finite Simulation Domain**: The description notes the simulation domain is limited to $[-10, 10]^3$. This spatial constraint, combined with the quenched nature of the filaments, limits the tracer's ability to sample the full velocity field, explaining why the speed distributions remain truncated and fail to exhibit the power-law behavior expected in an infinite random vortex gas.
+
+These constraints explain why the results remain in a pre-asymptotic, ballistic crossover regime rather than converging to the predicted theoretical limits.
