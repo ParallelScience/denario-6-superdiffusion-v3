@@ -1,0 +1,7 @@
+Classifier: Step 1 — Determining archive...
+  Archive: cond-mat — The paper focuses on anomalous transport, statistical mechanics, and the dynamics of tracers in disordered systems, which are core topics within condensed matter physics.
+Classifier: Step 2 — Determining subcategory within 'cond-mat'...
+  Primary: cond-mat.stat-mech
+  Secondary: cond-mat.dis-nn, physics.flu-dyn
+  Justification: The paper focuses on anomalous transport, superdiffusion, and non-equilibrium statistical mechanics in disordered systems. The use of quenched velocity fields and the analysis of transport regimes (Lévy statistics) are core topics in statistical mechanics and disordered systems. The inclusion of fluid dynamics (vortex filaments) justifies the cross-listing with physics.flu-dyn.
+Classification completed in 0 min 2 sec. Cost: $0.0000
