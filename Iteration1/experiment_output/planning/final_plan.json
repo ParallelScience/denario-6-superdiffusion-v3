@@ -1,0 +1,96 @@
+{
+    "sub_tasks": [
+        {
+            "bullet_points": [
+                "Load both datasets from their exact absolute paths",
+                "For each N configuration (5, 10, 20, 40), extract the 5 tracers and organize trajectories by tracer ID",
+                "Compute 3D TAMSD for each individual tracer using the msd_true field and time-averaged mean squared displacement formula",
+                "Compute ensemble-averaged TAMSD and the min-max range across the 5 tracers per N to quantify realization variance",
+                "Compute the EB parameter as a scalar for each N from the variance of individual TAMSDs relative to the ensemble mean",
+                "For Lévy walk data: compute TAMSD for each beta class (1.2, 1.5, 1.8, 2.5) and ensemble-average across the 10 trajectories per class",
+                "Save all TAMSD arrays, ensemble means, min-max bounds, and EB parameters to disk as npz files"
+            ],
+            "sub_task": "Load data, compute 3D TAMSD, realization variance, and EB parameters",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "For each N, compute velocities from finite differences of x_true, y_true, z_true (using dt=0.05 s); compute 3D speed at each time step",
+                "Compute the characteristic velocity scale v_c(N) as the standard deviation of the speed distribution for each N",
+                "Compute the empirical speed PDF for each N using log-spaced bins; normalize the speed axis by v_c(N) for data collapse",
+                "Compute the 3D VACF for each N: C_v(delta_t) = mean of v(t) dot v(t+delta_t) / mean of |v|^2, averaged over all tracers and time origins",
+                "For Lévy walk data: compute velocities from finite differences of x_true, y_true, z_true (using dt=0.1 s); compute VACF for each beta class",
+                "Save velocity arrays, speed PDFs, v_c values, and VACF arrays to disk as npz files"
+            ],
+            "sub_task": "Compute velocities, velocity PDFs with normalization, and VACF for both datasets",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "For each N, compute the 3D speed along each tracer trajectory and identify low-speed trapping events using a threshold of median speed divided by 2",
+                "Compute residence time distributions (durations of consecutive low-speed intervals) for each N; bin into a histogram on log-spaced bins",
+                "Compute marginal displacement PDFs for the x-coordinate (delta_x) at multiple lag times (t = 1, 5, 10, 20 s) for N=40; use kernel density estimation or histogram binning",
+                "Compute a proxy for the Okubo-Weiss criterion along tracer paths for N=40: use finite differences of velocity components to estimate the local velocity gradient tensor, then compute the OW parameter as the difference between strain rate squared and rotation rate squared",
+                "Correlate the local speed with the OW parameter along tracer paths; compute the Pearson correlation coefficient and report it",
+                "For the spatial sensitivity check: compute the perpendicular distance from each tracer position to each filament using the Biot-Savart geometry — for each filament, the perpendicular distance is computed as the norm of the cross product of the direction vector from a point on the filament to the tracer with the filament unit direction vector; take the minimum over all filaments to get the nearest-filament distance; since filament positions and orientations are not stored in the data file, reconstruct them by noting that the velocity field encodes the geometry — instead, use the local speed magnitude as a proxy and compute the correlation between local speed variance (computed in rolling windows along each trajectory) and the instantaneous speed, reporting the Pearson r and its interpretation",
+                "Save all residence time histograms, displacement PDF arrays, OW parameter arrays, and spatial correlation results to disk"
+            ],
+            "sub_task": "Compute residence time distributions, marginal displacement PDFs, and Okubo-Weiss spatial correlation",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load TAMSD data from Step 1 and velocity/VACF data from Step 2",
+                "For each N, compute the local slope alpha(t) = d log(TAMSD) / d log(t) using a Savitzky-Golay filter on the log-log derivative to smooth noise",
+                "Identify the stable scaling window for each N by finding the plateau region of the local slope curve, excluding t < 1 s (early transient) and the last 20% of the time range (finite-time effects)",
+                "Perform power-law fitting (linear regression in log-log space) within the stable window for each N; report alpha(N) with standard error",
+                "For Lévy walk data, perform the same fitting procedure and compare measured alpha against theoretical alpha = 3 - beta for each class",
+                "Compute the VACF zero-crossing time for each N and each beta by linear interpolation of the VACF curve",
+                "Estimate the persistence length as v_c times the VACF integral up to the zero-crossing time; compare to expected inter-filament spacing scaled as 20 * N^{-1/3} (domain size 20, uniform density)",
+                "Compute the EB parameter as a function of lag time for each N: EB(delta_t) = variance of individual TAMSD values at each lag divided by the square of the ensemble mean TAMSD",
+                "Print all fitted alpha values with uncertainties, zero-crossing times, persistence lengths, and EB values in a structured format",
+                "Save all fitting results, local slope curves, and EB(delta_t) arrays to disk as npz files"
+            ],
+            "sub_task": "Power-law fitting of MSD scaling, VACF persistence analysis, and EB as a function of lag time",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Plot 1 (Realization variance): 4-panel figure (one panel per N), each showing TAMSD curves for all 5 individual tracers as thin lines, ensemble mean as thick line, and min-max shading; axes in log-log scale with lag time in seconds and TAMSD in m^2",
+                "Plot 2 (Velocity PDF data collapse): Single log-log panel showing P(v/v_c) vs v/v_c for all 4 N values on the same axes using distinct colors; overlay the theoretical Holtsmark tail proportional to (v/v_c)^{-5/2} as a dashed black reference line; include a legend",
+                "Plot 3 (MSD scaling): Single log-log panel showing ensemble TAMSD vs lag time for all 4 N values, with fitted power-law lines overlaid and alpha values annotated; include the Lévy walk beta=1.5 (alpha_theory=1.5) ensemble TAMSD as a dashed reference curve; label axes with units",
+                "Plot 4 (VACF): Two-panel figure — left panel shows normalized VACF vs lag time for all 4 N values (vortex filament system); right panel shows normalized VACF vs lag time for all 4 beta classes (Lévy walk); mark zero-crossing times with vertical dashed lines on both panels",
+                "Save all plots as high-resolution PNG files"
+            ],
+            "sub_task": "Generate plots 1 through 4",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Plot 5 (Residence time distributions): Single log-log panel showing P(tau) vs tau for each N value using distinct colors; overlay power-law reference lines with slopes corresponding to the Holtsmark prediction; include a legend",
+                "Plot 6 (Displacement PDFs): 4-panel figure showing marginal PDF of delta_x at lag times t=1, 5, 10, 20 s for N=40; on each panel overlay a fitted Gaussian, and a Lévy-stable fit with stability index fixed at alpha_stable=1.5 (Holtsmark prediction) using scipy.stats.levy_stable; use log-linear or log-log scale as appropriate",
+                "Plot 7 (Okubo-Weiss correlation): For N=40, produce a 2D density plot (hexbin or KDE contour) of local speed vs OW parameter along all tracer paths, colored by point density; add marginal histograms on both axes; annotate with the Pearson correlation coefficient",
+                "Plot 8 (Ergodicity breaking regime map): Single panel scatter plot with alpha on the x-axis and EB parameter on the y-axis; plot vortex filament results for all N as one marker style and Lévy walk results for all beta as another marker style; annotate theoretical predictions (alpha=1.5 for Holtsmark, alpha=1.0 for normal diffusion); include EB(delta_t) curves for each N as inset or separate panel",
+                "Save all plots as high-resolution PNG files"
+            ],
+            "sub_task": "Generate plots 5 through 8",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Open with a structured summary table of all fitted exponents: alpha(N) for each N with uncertainty, EB(N) for each N, VACF zero-crossing times for each N and each beta, residence time exponents, and persistence lengths",
+                "Describe the realization-dependent variance across the 5 tracers per N (from Plot 1) and interpret what the min-max spread implies about the influence of quenched disorder on individual tracer trajectories",
+                "Discuss the velocity PDF data collapse (Plot 2): whether the normalized PDFs collapse onto a universal curve, how well the Holtsmark tail v^{-5/2} fits the empirical data, and how the tail behavior changes with N",
+                "Interpret the MSD scaling results (Plot 3): describe how alpha(N) evolves with increasing N, whether it converges toward the Holtsmark prediction of 1.5, and how the vortex filament TAMSD compares to the Lévy walk beta=1.5 reference",
+                "Discuss the VACF decay (Plot 4): describe the zero-crossing times and their dependence on N, compare the persistence lengths to the inter-filament spacing, and contrast the memory structure of the quenched vortex system with the renewal-based Lévy walk dynamics",
+                "Interpret the residence time distributions (Plot 5): report the power-law exponents and discuss whether they are consistent with the Holtsmark prediction",
+                "Discuss the displacement PDFs (Plot 6): describe the evolution from heavy-tailed to more Gaussian-like distributions with increasing lag time, assess the quality of the Lévy-stable fit with alpha_stable=1.5, and discuss what this implies about the effective stochastic theory",
+                "Discuss the Okubo-Weiss analysis (Plot 7): interpret the correlation between local speed and OW parameter, identify whether trapping events occur preferentially in high-rotation or high-strain regions, and report the Pearson correlation coefficient",
+                "Discuss ergodicity breaking (Plot 8): describe the position of the 3D vortex system in the (alpha, EB) plane relative to the Lévy walk ground truth, and interpret the EB(delta_t) curves",
+                "Conclude with an explicit contrast between 3D Holtsmark-dominated transport and 2D Cauchy-dominated transport, discussing how the change in kernel dimensionality (1/r^2 vs 1/r) and the presence of quenched disorder alter the anomalous diffusion exponent and the ergodicity breaking parameter"
+            ],
+            "sub_task": "Write the full Results section of the paper",
+            "sub_task_agent": "researcher"
+        }
+    ]
+}

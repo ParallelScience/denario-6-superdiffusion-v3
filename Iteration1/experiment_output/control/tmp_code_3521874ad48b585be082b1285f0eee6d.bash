@@ -1,0 +1,1 @@
+find /home/node/work/projects/superdiffusion_v3/ -name "*.npy"
