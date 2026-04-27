@@ -1,0 +1,9 @@
+The observed failures and ambiguities in the analysis are directly attributable to the following constraints in the dataset description:
+
+1. **Limited Sample Size (N=5 tracers per configuration):** The dataset provides only 5 tracers per filament configuration. This is insufficient to achieve statistical convergence for transport metrics, particularly for the residence time distributions (which yielded "NaN" results) and the tail estimation of the speed PDFs. The "realization-dependent variance" noted in the results is a direct consequence of this small sample size, preventing the ensemble from effectively sampling the quenched disorder.
+
+2. **Finite Observation Time:** The observation window of ~25 seconds is too short relative to the system's dynamics. The results indicate that the VACF zero-crossing time $\tau_c$ is often comparable to or exceeds the total simulation time (e.g., for N=5 and N=20). This prevents the system from reaching the asymptotic diffusion regime, explaining why the MSD exponents $\alpha(N)$ remain near-ballistic ($\alpha \approx 2$) rather than converging to the theoretical Holtsmark prediction of $\alpha = 1.5$.
+
+3. **Fixed Quenched Disorder:** The dataset description specifies that filament positions and orientations are fixed. Because the tracer ensemble is limited to only 5 trajectories per configuration, the analysis is unable to distinguish between universal transport properties and the specific, idiosyncratic geometry of the single realization provided for each $N$. This explains the "non-self-averaging" behavior and the inability to verify the $N^{1/3}$ scaling of the velocity distribution width.
+
+These constraints limit the ability to draw robust conclusions regarding the asymptotic anomalous diffusion exponent and the ergodicity of the system, as the finite-time, finite-sample results are dominated by the specific quenched geometry rather than the underlying stochastic theory.
